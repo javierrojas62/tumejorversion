@@ -20,7 +20,36 @@ body {
     position: relative;
     overflow-x: hidden;
 }
-
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: linear-gradient(45deg, var(--primary-turquoise), var(--secondary-turquoise), var(--light-mint));
+    opacity: 0.45; /* Menor opacidad para aclarar el fondo */
+    z-index: -2;
+    pointer-events: none;
+}
+body::after {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: white;
+    opacity: 0.35; /* Capa blanca para aclarar aún más */
+    z-index: -1;
+    pointer-events: none;
+}
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background: linear-gradient(45deg, var(--primary-turquoise), var(--secondary-turquoise), var(--light-mint));
+    opacity: 0.4; /* Ajusta la opacidad aquí */
+    z-index: -2;
+    pointer-events: none;
+}
 @keyframes gradientShift {
     0% {
         background-position: 0% 50%;
@@ -230,12 +259,13 @@ body {
 
 /* Hero Section */
 .hero-section {
-min-height: 100vh;
-display: flex;
-align-items: center;
-justify-content: center;
-text-align: center;
-padding: 60px 0 30px; /* Menos espacio arriba y abajo */
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 0 10px; /* Menos espacio abajo */
+    margin-bottom: 0;
 }
 
 .hero-content {
@@ -416,6 +446,19 @@ footer {
     color: var(--light-mint);
     text-align: center;
     margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: 1.1rem;
+}
+.footer-text .github-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 22px;
+    height: 22px;
+    margin-right: 6px;
+    filter: brightness(0) invert(1);
 }
 
 /* Responsive Design */
