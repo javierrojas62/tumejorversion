@@ -26,7 +26,7 @@ body::before {
     top: 0; left: 0;
     width: 100vw; height: 100vh;
     background: linear-gradient(45deg, var(--primary-turquoise), var(--secondary-turquoise), var(--light-mint));
-    opacity: 0.45; /* Menor opacidad para aclarar el fondo */
+    opacity: 0.45;
     z-index: -2;
     pointer-events: none;
 }
@@ -36,7 +36,7 @@ body::after {
     top: 0; left: 0;
     width: 100vw; height: 100vh;
     background: white;
-    opacity: 0.35; /* Capa blanca para aclarar aún más */
+    opacity: 0.35;
     z-index: -1;
     pointer-events: none;
 }
@@ -459,6 +459,23 @@ footer {
     height: 22px;
     margin-right: 6px;
     filter: brightness(0) invert(1);
+    max-width: 22px;
+    max-height: 22px;
+}
+@media (max-width: 576px) {
+    body::before, body::after {
+        width: 100vw;
+        height: 100vh;
+        background: linear-gradient(45deg, var(--primary-turquoise), var(--secondary-turquoise), var(--light-mint));
+        opacity: 0.45;
+    }
+    .footer-text .github-icon {
+        width: 16px;
+        height: 16px;
+        max-width: 16px;
+        max-height: 16px;
+        margin-right: 4px;
+    }
 }
 
 /* Responsive Design */
